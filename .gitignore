@@ -1,1 +1,7 @@
-node_modules/tests/example/node_modules/tests/example/public/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+node_modules/
+tests/example/public
