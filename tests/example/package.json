@@ -1,0 +1,13 @@
+{
+  "name": "caesium-test",
+  "main": "caesium-test.js",
+  "dependencies": {
+    "caesium": "file:///C:\\Code\\Node\\caesium"
+  },
+  "caesium": {
+    "port": 5556,
+    "exclude": [
+      "components"
+    ]
+  }
+}
