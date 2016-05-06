@@ -157,5 +157,14 @@ describe('Caesium', function(){
         console.dir(err)
       })
     })
+
+    it('should clean up after a build', function(done){
+      caesium.build.cleanAfterRun().then(function(){
+        fs.stat(path.join(__dirname, 'example', '_caesium_bundle.js'), function(err, stat){
+          expect(err.code).to.equal('ENOENT')
+          done()
+        })
+      })
+    })
   })
 })
