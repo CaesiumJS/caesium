@@ -1,6 +1,7 @@
 Caesium = require('../')
 
 expect = require('chai').expect
+rimraf = require('rimraf')
 
 fs = require('fs')
 path = require('path')
@@ -24,6 +25,14 @@ describe('Caesium', function(){
       caesium.getSiteModule()
 
       expect(caesium.siteModule.loaded).to.equal(true)
+    })
+  })
+
+  describe('Module Loader', function(){
+    it('should load the internal modules', function(){
+      caesium.modules.loadModules()
+      wrap = caesium.modules.getModuleForType('html')
+      expect(typeof wrap).not.to.equal('undefined')
     })
   })
 
@@ -84,33 +93,46 @@ describe('Caesium', function(){
     })
   })
 
-  describe('Handlers', function(){
+  describe('Modules', function(){
     describe('Raw', function(){
-      rawHandler = require('../lib/caesium/handlers/raw')
-
       it('should copy the file', function(done){
-        rawHandler.handle(caesium.sourceMap.map.files['assets/style.css'], caesium.options).then(function(){
+        rawModule = caesium.modules.getModuleForType('foobar')
+
+        rimraf(path.join(__dirname, 'example', 'public', 'assets', 'style.css'), function(){
+          fs.stat(path.join(__dirname, 'example', 'public', 'assets', 'style.css'), function(err, stat){
+            expect(err.code).to.equal('ENOENT')
+            rawModule.module.parseFile(caesium.sourceMap.map.files['assets/style.css'], caesium.options).then(function(){
+              fs.stat(path.join(__dirname, 'example', 'public', 'assets', 'style.css'), function(err, stat){
+                expect(err).to.equal(null)
+                done()
+              })
+            })
+          })
+        })
+      })
+    })
+
+    describe('Wrap', function(){
+      it('should put the file into the write queue', function(done){
+        wrapModule = caesium.modules.getModuleForType('.html')
+
+        expect(process.writeQueue.length).to.equal(0)
+
+        wrapModule.module.parseFile(caesium.sourceMap.map.files['pages/index.html'], caesium.options).then(function(){
+          expect(process.writeQueue.length).to.equal(1)
           done()
         })
       })
     })
 
     describe('Markdown', function(){
-      mdHandler = require('../lib/caesium/handlers/markdown')
+      it('should put the file into the write queue', function(done){
+        mdModule = caesium.modules.getModuleForType('.md')
 
-      it('should parse the file', function(done){
-        mdHandler.handle(caesium.sourceMap.map.files['pages/about.md'], caesium.options).then(function(){
-          process.writeQueue.pop()
-          done()
-        })
-      })
-    })
+        expect(process.writeQueue.length).to.equal(1)
 
-    describe('Wrap', function(){
-      wrapHandler = require('../lib/caesium/handlers/wrap')
-
-      it('should parse the file', function(done){
-        wrapHandler.handle(caesium.sourceMap.map.files['pages/index.html'], caesium.options).then(function(){
+        mdModule.module.parseFile(caesium.sourceMap.map.files['pages/about.md'], caesium.options).then(function(){
+          expect(process.writeQueue.length).to.equal(2)
           done()
         })
       })
