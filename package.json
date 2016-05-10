@@ -1,7 +1,7 @@
 {
   "name": "caesium",
-  "version": "0.0.1-alpha1",
-  "description": "React base static site generator",
+  "version": "0.0.1-alpha2",
+  "description": "React based static site generator",
   "main": "index.js",
   "bin": {
     "caesium": "./bin/caesium.js"
