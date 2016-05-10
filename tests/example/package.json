@@ -4,6 +4,7 @@
   "dependencies": {
     "caesium": "file:///C:\\Code\\Node\\caesium"
   },
+  "private": true,
   "caesium": {
     "port": 5556,
     "exclude": [

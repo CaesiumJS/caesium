@@ -137,6 +137,20 @@ describe('Caesium', function(){
         })
       })
     })
+
+    describe('Javascript', function(){
+      it('should load the module', function(done){
+        jsModule = caesium.modules.getModuleForType('.js')
+
+        expect(process.writeQueue.length).to.equal(2)
+
+        jsModule.module.parseFile(caesium.sourceMap.map.files['pages/react.js'], caesium.options).then(function(){
+          expect(process.writeQueue.length).to.equal(3)
+          expect(caesium.sourceMap.map.files['pages/react.js'].component).not.to.equal(null)
+          done()
+        })
+      })
+    })
   })
 
   describe('Building', function(){

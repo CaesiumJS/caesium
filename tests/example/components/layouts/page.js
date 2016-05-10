@@ -13,7 +13,7 @@ module.exports = React.createClass({
     return React.DOM.div({className: 'page'},
       React.DOM.h1({}, this.props.title),
       React.DOM.div({},
-        React.DOM.div({dangerouslySetInnerHTML: {__html: this.props.body}}),
+        React.DOM.div({}, this.props.children),
         React.DOM.div({}, "Loaded: " + this.state.loaded)
       )
     )

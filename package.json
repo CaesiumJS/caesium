@@ -32,7 +32,6 @@
     "progress": "^1.1.8",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-router": "^2.4.0",
     "rimraf": "^2.5.2",
     "sodb": "^1.1.4",
     "static-server": "^2.0.2"

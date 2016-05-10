@@ -1,7 +1,5 @@
-CaesiumClient = require('caesium/client')
+window.CaesiumClient = require('caesium/client')
 
-siteModule = require('./')
+window.siteModule = require('./')
 
-window.caesiumClient = new CaesiumClient(siteModule)
-
-window.caesiumClient.boot(window.caesiumProps)
+window.caesiumModules = require('./_caesium_modules')
