@@ -4,7 +4,7 @@ node_js:
 sudo: false
 script:
   - "cd ./tests/example && npm install ../../ --save && npm install caesium-coffee --save"
-  - "npm test"
+  - "cd ../../ && npm test"
 
 notifications:
   webhooks:
