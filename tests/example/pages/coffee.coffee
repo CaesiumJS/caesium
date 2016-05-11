@@ -1,6 +1,6 @@
 ---
 title: 'Coffee Page'
-layout: 'page'
+layout: 'coffee'
 ---
 
 React = require('react')
