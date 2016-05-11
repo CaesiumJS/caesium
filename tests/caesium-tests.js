@@ -155,7 +155,7 @@ describe('Caesium', function(){
 
   describe('Building', function(){
     it('should have set a parse order in the last test', function(){
-      expect(caesium.sourceMap.parseList[0][0].paths.route).to.equal('assets/style.css')
+      expect(caesium.sourceMap.parseList[0][0].paths.route).to.equal('assets/lrt.js')
     })
 
     it('should clear the build dir', function(done){
