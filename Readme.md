@@ -1,6 +1,6 @@
 # Caesium
 
-![Caesium Logo](./resources/logo.svg)
+![Caesium Logo](https://rawgit.com/CaesiumJS/caesium/master/resources/logo.svg)
 
 A static application generator which creates a [React] application and passes all the props to you. Allows you to create a site search and other dynamic pages from your site as if it had a database.
 
