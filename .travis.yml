@@ -3,6 +3,7 @@ node_js:
   - "5.11"
 sudo: false
 script:
+  - "cd ./tests/example && npm install ../../ --save && npm install"
   - "npm test"
 
 notifications:
