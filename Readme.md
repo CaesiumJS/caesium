@@ -1,6 +1,6 @@
 # Caesium
 
-[![Join the chat at https://gitter.im/CaesiumJS/caesium](https://badges.gitter.im/CaesiumJS/caesium.svg)](https://gitter.im/CaesiumJS/caesium?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/CaesiumJS/caesium.svg?branch=master)](https://travis-ci.org/CaesiumJS/caesium) [![Coverage Status](https://coveralls.io/repos/github/CaesiumJS/caesium/badge.svg?branch=master)](https://coveralls.io/github/CaesiumJS/caesium?branch=master)
+[![Join the chat at https://gitter.im/CaesiumJS/caesium](https://badges.gitter.im/CaesiumJS/caesium.svg)](https://gitter.im/CaesiumJS/caesium?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/CaesiumJS/caesium.svg?branch=master)](https://travis-ci.org/CaesiumJS/caesium) [![Dependency Status](https://david-dm.org/caesiumjs/caesium.svg)](https://david-dm.org/caesiumjs/caesium)
 
 ![Caesium Logo](https://rawgit.com/CaesiumJS/caesium/master/resources/logo.svg)
 
