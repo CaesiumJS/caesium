@@ -20,19 +20,19 @@ describe('Caesium', function(){
     expect(caesium.options.exclusions.indexOf('public')).not.to.equal(-1)
   })
 
-  describe('Loading local js', function(){
-    it('should load the sites main js file', function(){
-      caesium.getSiteModule()
-
-      expect(caesium.siteModule.loaded).to.equal(true)
-    })
-  })
-
   describe('Module Loader', function(){
     it('should load the internal modules', function(){
       caesium.modules.loadModules()
       wrap = caesium.modules.getModuleForType('html')
       expect(typeof wrap).not.to.equal('undefined')
+    })
+  })
+
+  describe('Loading local js', function(){
+    it('should load the sites main js file', function(){
+      caesium.getSiteModule()
+
+      expect(caesium.siteModule.loaded).to.equal(true)
     })
   })
 
