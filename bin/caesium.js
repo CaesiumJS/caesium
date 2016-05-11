@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 program = require('commander')
 
 path = require('path')
