@@ -12,6 +12,7 @@ program
   .version(pkg.name + '@' + pkg.version)
   .option('local', 'run the application localy')
   .option('build', 'build the application')
+  .option('new <path>', 'create a new application in the given path')
   .parse(process.argv)
 
 if(program.local){
@@ -30,4 +31,11 @@ if(program.build){
 
   build = require('../lib/tasks/build')
   build(caesium)
+}
+
+if(program.new){
+  console.log('Creating new Caesium application')
+
+  newApplication = require('../lib/tasks/new')
+  newApplication(program.new)
 }
