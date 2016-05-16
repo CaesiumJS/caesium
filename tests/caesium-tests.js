@@ -34,6 +34,12 @@ describe('Caesium', function(){
 
       expect(caesium.siteModule.loaded).to.equal(true)
     })
+
+    it('should have loaded the custom module', function(){
+      mod = caesium.modules.modules.findOne({displayName: 'Custom'})
+
+      expect(mod.displayName).to.equal('Custom')
+    })
   })
 
   describe('Source Map', function(){
@@ -82,13 +88,12 @@ describe('Caesium', function(){
   describe('Path Building', function(){
     it('should build the paths', function(done){
       caesium.buildPaths().then(function(){
-        expect(caesium.sourceMap.map.files['assets/style.css'].paths.route).to.equal('assets/style.css')
+        expect(caesium.sourceMap.map.files['assets/style.css'].paths.targetFile).to.equal('assets/style.css')
         done()
       })
     })
 
     it('should have pathed /pages/index.html to /', function(){
-      expect(caesium.sourceMap.map.files['pages/index.html'].paths.route).to.equal('/')
       expect(caesium.sourceMap.map.files['pages/index.html'].paths.targetFile).to.equal('/index.html')
     })
   })
@@ -155,7 +160,7 @@ describe('Caesium', function(){
 
   describe('Building', function(){
     it('should have set a parse order in the last test', function(){
-      expect(caesium.sourceMap.parseList[0][0].paths.route).to.equal('assets/lrt.js')
+      expect(caesium.sourceMap.parseList[0][0].paths.targetFile).to.equal('assets/lrt.js')
     })
 
     it('should clear the build dir', function(done){
