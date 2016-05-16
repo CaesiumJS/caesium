@@ -3,7 +3,7 @@ module.exports = {
 
   layouts: {
     page: require('./components/layouts/page'),
-    coffee: require('./components/layouts/coffee.coffee')
+    coffee: require('./components/layouts/coffee')
   },
 
   headTags: {
