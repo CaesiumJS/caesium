@@ -10,5 +10,9 @@ module.exports = {
     style: [
       '/assets/style.css'
     ]
+  },
+
+  modules: {
+    Custom: require('./components/custom-module')
   }
 }
