@@ -1,10 +1,14 @@
-Caesium = require('../')
-
 expect = require('chai').expect
 rimraf = require('rimraf')
 
 fs = require('fs')
 path = require('path')
+
+if(process.env.COVERAGE == "1"){
+  Caesium = require('../lib-cov/caesium')
+}else{
+  Caesium = require('../')
+}
 
 describe('Caesium', function(){
   caesium = null

@@ -6,3 +6,4 @@ $RECYCLE.BIN/
 node_modules/
 tests/example/public
 site
+lib-cov

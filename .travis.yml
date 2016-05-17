@@ -5,6 +5,8 @@ sudo: false
 script:
   - "cd ./tests/example && npm install ../../ --save && npm install caesium-coffee --save"
   - "cd ../../ && npm test"
+  - "npm run-script jscover"
+  - "npm run-script coverage"
 
 notifications:
   webhooks:
