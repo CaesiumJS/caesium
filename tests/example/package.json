@@ -3,7 +3,7 @@
   "main": "caesium-test.js",
   "dependencies": {
     "caesium": "file:///C:\\Code\\Node\\caesium",
-    "caesium-coffee": "file:///C:\\Code\\Node\\caesium-coffee"
+    "caesium-coffee": "0.0.1-alpha3"
   },
   "private": true,
   "caesium": {
