@@ -33,6 +33,7 @@
     "react-dom": "^15.0.2",
     "remarkable": "^1.6.2",
     "rimraf": "^2.5.2",
+    "semver": "^5.1.0",
     "sodb": "^1.1.4",
     "static-server": "^2.0.2"
   },
