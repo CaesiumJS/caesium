@@ -88,12 +88,16 @@ describe('Caesium', function(){
   describe('Path Building', function(){
     it('should build the paths', function(done){
       caesium.buildPaths().then(function(){
+        expect(caesium.sourceMap.map.files['pages/about.md'].paths.path).to.equal('/pages/about')
+        expect(caesium.sourceMap.map.files['pages/react.js'].paths.path).to.equal('/pages/react')
+        expect(caesium.sourceMap.map.files['pages/wrap.html'].paths.path).to.equal('/pages/wrap')
         expect(caesium.sourceMap.map.files['assets/style.css'].paths.targetFile).to.equal('assets/style.css')
         done()
       })
     })
 
     it('should have pathed /pages/index.html to /', function(){
+      expect(caesium.sourceMap.map.files['pages/index.html'].paths.path).to.equal('/')
       expect(caesium.sourceMap.map.files['pages/index.html'].paths.targetFile).to.equal('/index.html')
     })
   })
