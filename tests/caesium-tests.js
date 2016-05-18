@@ -5,7 +5,7 @@ fs = require('fs')
 path = require('path')
 
 if(process.env.COVERAGE == "1"){
-  Caesium = require('../lib-cov/caesium')
+  Caesium = require(path.join(__dirname, '..', 'lib-cov', 'caesium.js'))
 }else{
   Caesium = require('../')
 }
