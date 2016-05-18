@@ -9,7 +9,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha ./tests/*.js",
     "jscover": "./node_modules/.bin/jscover lib lib-cov",
-    "coverage": "env COVERAGE=1 ./node_modules/.bin/mocha ./tests/*.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "coverage": "env COVERAGE=1 ./node_modules/.bin/mocha ./tests/*.js -R mocha-lcov-reporter > results.lcov"
   },
   "repository": "https://github.com/CaesiumJS/caesium.git",
   "keywords": [
