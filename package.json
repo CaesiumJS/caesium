@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha ./tests/*.js",
-    "jscover": "./node_modules/.bin/jscover lib lib-cov",
+    "jscover": "./node_modules/.bin/jscoverage ./lib ./lib-cov",
     "coverage": "env COVERAGE=1 ./node_modules/.bin/mocha ./tests/*.js -R mocha-lcov-reporter > results.lcov"
   },
   "repository": "https://github.com/CaesiumJS/caesium.git",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
-    "jscover": "^1.0.0",
+    "jscoverage": "^0.6.0",
     "mocha": "^2.4.5",
     "mocha-lcov-reporter": "^1.2.0"
   }
