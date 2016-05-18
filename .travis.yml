@@ -7,7 +7,7 @@ script:
   - "cd ../../ && npm test"
   - "npm run-script jscover"
   - "npm run-script coverage"
-  - "cat results.lcov"
+  - "cat results.lcov | ./node_modules/coveralls/bin/coveralls.js"
 
 notifications:
   webhooks:
