@@ -164,6 +164,17 @@ describe('Caesium', function(){
         })
       })
     })
+
+    describe('Data', function(){
+      it('should load the module', function(done){
+        dataModule = caesium.modules.getModuleForType('.json')
+
+        dataModule.module.parseFile(caesium.sourceMap.map.files['data/sample.json'], caesium.options).then(function(){
+          expect(process.dataProps.sample.authors[0]).to.equal('Arcath')
+          done()
+        })
+      })
+    })
   })
 
   describe('Building', function(){
